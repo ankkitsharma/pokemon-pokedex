@@ -1,0 +1,18 @@
+/* Style for Links */
+.Link {
+  text-decoration: none;
+  color: #20262c;
+  height: 5rem;
+  width: 15rem;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(228, 233, 154);
+  transition: color 0.3s ease;
+  font-size: 1.2rem;
+}
+
+.Link:hover span {
+  color: rgb(124, 133, 112);
+}

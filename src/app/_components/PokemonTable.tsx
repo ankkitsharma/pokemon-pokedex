@@ -1,5 +1,7 @@
 "use client";
 import { api } from "~/trpc/react";
+import PokemonRow from "./PokemonRow";
+import { Box, Container, Stack } from "@mui/material";
 
 export default function PokemonTable({
   pokemonNames,
@@ -10,17 +12,19 @@ export default function PokemonTable({
     api.pokedex.getPokemons.useQuery(pokemonNames);
   // console.log("Bulbasaur and Ivysaur ", pokemons);
   return (
-    <div>
+    <Stack direction={"row"} flexWrap={"wrap"}>
       {isPending
         ? "Loading..."
         : pokemons!.map((pokemon) => {
             return (
-              <div key={pokemon.name}>
-                <h1>{pokemon.name}</h1>
-                <img src={pokemon.sprite} alt={pokemon.name} />
-              </div>
+              <PokemonRow
+                key={pokemon.id}
+                name={pokemon.name}
+                sprite={pokemon.sprite}
+                types={pokemon.types}
+              />
             );
           })}
-    </div>
+    </Stack>
   );
 }
