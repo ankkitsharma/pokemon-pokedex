@@ -24,7 +24,11 @@ interface Props {
 }
 
 const drawerWidth = 240;
-const navItems = ["Home", "About", "Contact"];
+const newNavItems = {
+  Home: "/",
+  byName: "/byName",
+  byType: "/byType",
+};
 
 export default function DrawerAppBar(props: Props) {
   const { window } = props;
@@ -37,14 +41,16 @@ export default function DrawerAppBar(props: Props) {
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       <Typography variant="h6" sx={{ my: 2 }}>
-        MUI
+        Pokédex
       </Typography>
       <Divider />
       <List>
-        {navItems.map((item) => (
+        {Object.keys(newNavItems).map((item) => (
           <ListItem key={item} disablePadding>
             <ListItemButton sx={{ textAlign: "center" }}>
-              <ListItemText primary={item} />
+              <Button href={newNavItems[item as keyof typeof newNavItems]}>
+                {item}
+              </Button>
             </ListItemButton>
           </ListItem>
         ))}
@@ -56,9 +62,9 @@ export default function DrawerAppBar(props: Props) {
     window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: "flex" }}>
+    <>
       <CssBaseline />
-      <AppBar component="nav">
+      <AppBar component="nav" color="transparent">
         <Toolbar>
           <IconButton
             color="inherit"
@@ -74,11 +80,14 @@ export default function DrawerAppBar(props: Props) {
             component="div"
             sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
           >
-            MUI
+            Pokédex
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
-            {navItems.map((item) => (
-              <Button key={item} sx={{ color: "#fff" }}>
+            {Object.keys(newNavItems).map((item) => (
+              <Button
+                key={item}
+                href={newNavItems[item as keyof typeof newNavItems]}
+              >
                 {item}
               </Button>
             ))}
@@ -105,6 +114,6 @@ export default function DrawerAppBar(props: Props) {
           {drawer}
         </Drawer>
       </nav>
-    </Box>
+    </>
   );
 }
