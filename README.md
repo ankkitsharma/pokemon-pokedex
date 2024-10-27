@@ -5,7 +5,7 @@ Created using the TRPC, Nextjs, Prisma and Material UI
 
 ## Hosted on
 
-This project is hosted on GitHub Pages. You can access it [here](https://pokemon-pokedex-one.vercel.app/).
+This project is hosted on Vercel. You can access it [here](https://pokemon-pokedex-one.vercel.app/).
 
 ## Built With
 
