@@ -3,11 +3,19 @@ import { z } from "zod";
 
 import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
 
+const ITEMS_PER_PAGE = 4;
+
 export const pokedexRouter = createTRPCRouter({
   getPokemons: publicProcedure
-    .input(z.array(z.string()))
+    .input(
+      z.object({
+        names: z.array(z.string()),
+        page: z.number().min(1),
+      })
+    )
     .query(async ({ ctx, input }) => {
-      const capitalizedName = input.map(
+      const { names, page } = input;
+      const capitalizedName = names.map(
         (name) => name.charAt(0).toUpperCase() + name.slice(1)
       );
       const pokemons = await ctx.db.pokemon.findMany({
@@ -26,9 +34,26 @@ export const pokedexRouter = createTRPCRouter({
             },
           },
         },
+        skip: (page - 1) * ITEMS_PER_PAGE,
+        take: ITEMS_PER_PAGE,
       });
 
       return pokemons ?? null;
+    }),
+  getPokemonLength: publicProcedure
+    .input(z.array(z.string()))
+    .query(async ({ ctx, input }) => {
+      const capitalizedName = input.map(
+        (name) => name.charAt(0).toUpperCase() + name.slice(1)
+      );
+      const pokemons = await ctx.db.pokemon.findMany({
+        where: {
+          name: {
+            in: capitalizedName,
+          },
+        },
+      });
+      return pokemons.length ?? null;
     }),
   getAllPokemonNames: publicProcedure.query(async ({ ctx }) => {
     const pokemons = await ctx.db.pokemon.findMany({
@@ -51,7 +76,7 @@ export const pokedexRouter = createTRPCRouter({
     });
     return types ?? null;
   }),
-  getPokemonNamesByType: publicProcedure
+  getPokemonsByType: publicProcedure
     .input(z.array(z.string()))
     .query(async ({ ctx, input }) => {
       const capitalizedInput = input.map(

@@ -5,9 +5,7 @@ export default async function page() {
   const allPokemons = await api.pokedex.getAllPokemonNames();
   return (
     <HydrateClient>
-      <div>
-        <PokemonForm allPokemons={allPokemons} />
-      </div>
+      <PokemonForm allPokemons={allPokemons} />
     </HydrateClient>
   );
 }

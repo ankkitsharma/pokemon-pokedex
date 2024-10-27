@@ -14,7 +14,7 @@ export default function FilterablePokedexTable({
 }) {
   const [submittedTypes, setSubmittedTypes] = useState<string[]>([]);
   const { data: pokemonNameByType } =
-    api.pokedex.getPokemonNamesByType.useQuery(submittedTypes);
+    api.pokedex.getPokemonsByType.useQuery(submittedTypes);
   console.log(pokemonNameByType);
 
   return (
