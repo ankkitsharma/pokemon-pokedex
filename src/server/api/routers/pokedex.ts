@@ -4,28 +4,6 @@ import { z } from "zod";
 import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
 
 export const pokedexRouter = createTRPCRouter({
-  getPokemon: publicProcedure
-    .input(z.object({ name: z.string() }))
-    .query(async ({ ctx, input }) => {
-      const capitalizedName =
-        input.name.charAt(0).toUpperCase() + input.name.slice(1);
-      const pokemon = await ctx.db.pokemon.findFirst({
-        where: {
-          name: capitalizedName,
-        },
-        select: {
-          name: true,
-          sprite: true,
-          types: {
-            select: {
-              name: true,
-            },
-          },
-        },
-      });
-
-      return pokemon ?? null;
-    }),
   getPokemons: publicProcedure
     .input(z.array(z.string()))
     .query(async ({ ctx, input }) => {

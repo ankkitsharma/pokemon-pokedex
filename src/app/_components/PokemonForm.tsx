@@ -8,7 +8,6 @@ import {
   Chip,
 } from "@mui/material";
 import { useState } from "react";
-import PokemonRow from "./PokemonRow";
 import PokemonTable from "./PokemonTable";
 
 export default function PokemonForm({
