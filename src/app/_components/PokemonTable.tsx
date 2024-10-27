@@ -43,7 +43,7 @@ export default function PokemonTable({
         </Stack>
       )}
       {totalPages != undefined && totalPages > 0 ? (
-        <Pagination totalPages={Math.ceil(totalPages! / 4)} />
+        <Pagination totalPages={Math.ceil(totalPages / 4)} />
       ) : null}
     </Stack>
   );
