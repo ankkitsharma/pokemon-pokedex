@@ -1,3 +1,10 @@
+"use client";
+import { Container } from "@mui/material";
+import PokemonTypeSelection from "./PokemonTypeSelection";
+import PokemonTable from "./PokemonTable";
+import { api } from "~/trpc/react";
+import { useState } from "react";
+
 export default function FilterablePokedexTable({
   allTypes,
 }: {
@@ -5,5 +12,18 @@ export default function FilterablePokedexTable({
     name: string;
   }[];
 }) {
-  return <div>FilterablePokedexTable</div>;
+  const [submittedTypes, setSubmittedTypes] = useState<string[]>([]);
+  const { data: pokemonNameByType } =
+    api.pokedex.getPokemonNamesByType.useQuery(submittedTypes);
+  console.log(pokemonNameByType);
+
+  return (
+    <Container sx={{ mt: 2 }}>
+      <PokemonTypeSelection
+        setSubmittedTypes={setSubmittedTypes}
+        allTypes={allTypes}
+      />
+      {pokemonNameByType && <PokemonTable pokemonNames={pokemonNameByType!} />}
+    </Container>
+  );
 }
