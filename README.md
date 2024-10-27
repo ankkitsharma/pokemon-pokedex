@@ -53,6 +53,8 @@ To get a local copy up and running, follow these steps:
 
 ## Screenshots
 ![image](https://github.com/user-attachments/assets/9f587801-4fe1-4969-a2c4-a8faae8342eb)
+![image](https://github.com/user-attachments/assets/6a6f7914-3289-48f7-8739-0420804f50bb)
+
 
 
 ## API Endpoints
