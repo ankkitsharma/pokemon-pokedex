@@ -19,8 +19,9 @@ This project is hosted on GitHub Pages. You can access it [here](https://pokemon
 ## Table of Contents
 
 1. [Installation](#installation)
-2. [API Endpoints](#api-endpoints)
-3. [Roadmap](#roadmap)
+2. [Screenshots](#screenshots)
+3. [API Endpoints](#api-endpoints)
+4. [Roadmap](#roadmap)
 
 ## Installation
 
@@ -49,6 +50,10 @@ To get a local copy up and running, follow these steps:
    ```sh
    npm start
    ```
+
+## Screenshots
+![image](https://github.com/user-attachments/assets/9f587801-4fe1-4969-a2c4-a8faae8342eb)
+
 
 ## API Endpoints
 
