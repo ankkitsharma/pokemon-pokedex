@@ -23,7 +23,9 @@ export default function FilterablePokedexTable({
         setSubmittedTypes={setSubmittedTypes}
         allTypes={allTypes}
       />
-      {pokemonNameByType && <PokemonTable pokemonNames={pokemonNameByType!} />}
+      {pokemonNameByType != undefined ? (
+        <PokemonTable pokemonNames={pokemonNameByType} />
+      ) : null}
     </Container>
   );
 }
