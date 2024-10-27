@@ -62,9 +62,10 @@ To get a local copy up and running, follow these steps:
 
 ## Screenshots
 
-![image](https://github.com/user-attachments/assets/9f587801-4fe1-4969-a2c4-a8faae8342eb)
-![image](https://github.com/user-attachments/assets/6a6f7914-3289-48f7-8739-0420804f50bb)
-![image](https://github.com/user-attachments/assets/ff216818-f236-4320-b6f3-8076a877e16e)
+![image](https://github.com/user-attachments/assets/95447f47-5673-42b1-a858-726c031c8fbb)
+![image](https://github.com/user-attachments/assets/313c69c4-ecf4-410a-9256-adfab51e4a0a)
+
+
 
 ## API Endpoints
 
