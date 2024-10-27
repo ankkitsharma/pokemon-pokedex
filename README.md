@@ -1,7 +1,7 @@
 # Pokémon Pokedex
 
 This is a pokedex web app that allows users to view details of all Pokémon species.
-Created using the TRPC, Nextjs, Prisma and Material UI
+Created using the TRPC, Nextjs, Prisma and Material UI.
 
 ## Hosted on
 
@@ -18,10 +18,19 @@ This project is hosted on Vercel. You can access it [here](https://pokemon-poked
 
 ## Table of Contents
 
-1. [Installation](#installation)
-2. [Screenshots](#screenshots)
-3. [API Endpoints](#api-endpoints)
-4. [Roadmap](#roadmap)
+1. [Features](#features)
+2. [Installation](#installation)
+3. [Screenshots](#screenshots)
+4. [API Endpoints](#api-endpoints)
+5. [Roadmap](#roadmap)
+
+## Features
+
+- Search Pokémon by name
+- Filter Pokémon by type
+- Pagination for browsing through Pokémon species
+- Responsive design for mobile and desktop
+- Fast and efficient data fetching using TRPC
 
 ## Installation
 
@@ -52,12 +61,10 @@ To get a local copy up and running, follow these steps:
    ```
 
 ## Screenshots
+
 ![image](https://github.com/user-attachments/assets/9f587801-4fe1-4969-a2c4-a8faae8342eb)
 ![image](https://github.com/user-attachments/assets/6a6f7914-3289-48f7-8739-0420804f50bb)
 ![image](https://github.com/user-attachments/assets/ff216818-f236-4320-b6f3-8076a877e16e)
-
-
-
 
 ## API Endpoints
 
@@ -68,5 +75,4 @@ To get a local copy up and running, follow these steps:
 
 ## Roadmap
 
-- [ ] Add Pagination
 - [ ] Improve UI/UX design.
